@@ -10,6 +10,7 @@ import com.hmdp.service.IBlogService;
 import com.hmdp.service.IUserService;
 import com.hmdp.utils.SystemConstants;
 import com.hmdp.utils.UserHolder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,6 +24,7 @@ import java.util.List;
  * @author 虎哥
  * @since 2021-12-22
  */
+@Slf4j
 @RestController
 @RequestMapping("/blog")
 public class BlogController {
@@ -80,4 +82,10 @@ public class BlogController {
         });
         return Result.ok(records);
     }
+
+//    @GetMapping("/{id}")
+//    public Result aaa(){
+//        log.info("{}","成功啦");
+//        return Result.ok();
+//    }
 }
