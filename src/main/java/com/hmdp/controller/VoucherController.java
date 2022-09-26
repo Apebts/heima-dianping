@@ -3,7 +3,9 @@ package com.hmdp.controller;
 
 import com.hmdp.dto.Result;
 import com.hmdp.entity.Voucher;
+import com.hmdp.entity.VoucherOrder;
 import com.hmdp.service.IVoucherService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -22,6 +24,7 @@ public class VoucherController {
 
     @Resource
     private IVoucherService voucherService;
+
 
     /**
      * 新增普通券
@@ -54,4 +57,8 @@ public class VoucherController {
     public Result queryVoucherOfShop(@PathVariable("shopId") Long shopId) {
        return voucherService.queryVoucherOfShop(shopId);
     }
+
+
+
+
 }

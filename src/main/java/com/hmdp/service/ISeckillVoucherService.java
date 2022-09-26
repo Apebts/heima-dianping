@@ -13,4 +13,5 @@ import com.hmdp.entity.SeckillVoucher;
  */
 public interface ISeckillVoucherService extends IService<SeckillVoucher> {
 
+
 }

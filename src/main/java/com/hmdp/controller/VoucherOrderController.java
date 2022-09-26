@@ -2,10 +2,17 @@ package com.hmdp.controller;
 
 
 import com.hmdp.dto.Result;
+import com.hmdp.mapper.VoucherOrderMapper;
+import com.hmdp.service.ISeckillVoucherService;
+import com.hmdp.service.IVocherOrderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.connection.ReactiveZSetCommands;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -18,8 +25,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/voucher-order")
 public class VoucherOrderController {
+
+    @Autowired
+    private IVocherOrderService voucherOrderService;
+
+
     @PostMapping("seckill/{id}")
-    public Result seckillVoucher(@PathVariable("id") Long voucherId) {
-        return Result.fail("功能未完成");
+    public Result seckillVoucher(@PathVariable("id") Long voucherId){
+
+        return voucherOrderService.seckillVoucher(voucherId);
     }
 }
